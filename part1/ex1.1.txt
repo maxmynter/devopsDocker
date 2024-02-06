@@ -1,0 +1,21 @@
+docker container run nginx -d
+/docker-entrypoint.sh: 47: exec: -d: not found
+
+░▒▓  maxmynter  …/devopsdocker   main ?  ♥ 17:37  docker container run -d nginx
+e1b0f593993efa980ffe0a228d9cedfa63b8bf5334ba04d2947e9a29292f7a9f
+
+░▒▓  maxmynter  …/devopsdocker   main ?  ♥ 17:37  docker container run -d nginx
+05e5a62024dc207b1fd6ba7d4e2db11587e56ce286c62984d10bf4726a9c847a
+
+░▒▓  maxmynter  …/devopsdocker   main ?  ♥ 17:37  docker container run -d nginx
+93700b0d0a42831bcfa698ab31111ac87c93c8c7982e71fc40199e5427df3987
+
+░▒▓  maxmynter  …/devopsdocker   main ?  ♥ 17:37  docker container stop e1 05
+e1
+05
+
+░▒▓  maxmynter  …/devopsdocker   main ?  ♥ 17:37  docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS                          PORTS     NAMES
+93700b0d0a42   nginx     "/docker-entrypoint.…"   26 seconds ago       Up 26 seconds                   80/tcp    funny_haibt
+05e5a62024dc   nginx     "/docker-entrypoint.…"   28 seconds ago       Exited (0) 6 seconds ago                  frosty_yalow
+e1b0f593993e   nginx     "/docker-entrypoint.…"   31 seconds ago       Exited (0) 6 seconds ago                  jovial_goldberg

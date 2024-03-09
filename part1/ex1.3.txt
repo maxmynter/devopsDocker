@@ -1,0 +1,16 @@
+Text message: 'You can find the source code here: https://github.com/docker-hy'
+
+COMMANDS:
+
+docker pull devopsdockeruh/simple-web-service:ubuntu
+docker run devopsdockeruh/simple-web-service:ubuntu
+
+(Could also just run as then it is pulled automatically)
+docker container ls 
+-> get the name/ container id. In this case 2f...
+
+docker logs -f 2f
+-> find file where secret message is written to
+
+docker exec -it 2f bash 
+Then in container bash navigate to the file and open (cat) to read

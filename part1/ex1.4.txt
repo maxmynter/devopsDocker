@@ -1,0 +1,22 @@
+docker run -d -it ubuntu sh -c 'while true; do echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'
+
+then exec into it (id starts with 16)
+
+docker exec -ti 16 bash 
+
+There update apt-get and install curl 
+
+apt-get update
+apt-get install curl -y
+
+Then exit with 
+
+exit
+
+Now we can attach to the container and input a website 
+
+docker attach 16 
+
+helsinki.fi
+
+This returns the expected output from the website.

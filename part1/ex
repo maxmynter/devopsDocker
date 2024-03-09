@@ -1,0 +1,16 @@
+docker pull devopsdockeruh/simple-web-service:alpine
+
+With 8 the container ID first number
+docker exec -it 8 sh
+
+cat text.log
+=> Verified functionality
+
+compare image sizes
+docker image ls
+
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   2 years ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   2 years ago   15.7MB
+
+Far smaller.
+

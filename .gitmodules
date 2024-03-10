@@ -1,0 +1,6 @@
+[submodule "part1/ex1.11/spring-example-project"]
+	path = part1/ex1.11/spring-example-project
+	url = https://github.com/docker-hy/material-applications.git
+[submodule "material-applications"]
+	path = material-applications
+	url = https://github.com/docker-hy/material-applications.git

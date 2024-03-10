@@ -1,0 +1,5 @@
+First, create the directory and text.log file (otherwise, text.log would be created as a directory -- alternatively, only mount the directory in the subsequent command, ommitting text.log in local and container parts of the -v flag argument). 
+
+
+docker run  -v "$(pwd)/ex1.9/text.log:/usr/src/app/text.log" devopsdockeruh/simple-web-service
+

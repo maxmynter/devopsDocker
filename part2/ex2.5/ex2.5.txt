@@ -1,0 +1,2 @@
+docker compose up --scale compute=9
+# Probably could work with less too. But 9 works!

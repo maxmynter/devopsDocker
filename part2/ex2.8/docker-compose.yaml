@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  proxy:
+    image: nginx:1.24.0-alpine-slim
+    restart: unless-stopped
+    ports:
+      - "5001:80"
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+  front:
+    build:
+      context: example-frontend/
+      dockerfile: Dockerfile-frontend
+  back:
+    build:
+      context: example-backend/ 
+      dockerfile: Dockerfile-backend
+    environment:
+      - REDIS_HOST=redis
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DATABASE=postgres
+      - POSTGRES_HOST=db
+      - PORT=8080
+    depends_on:
+      - db 
+  redis:
+    image: redis
+    ports:
+      - "6379:6379" 
+  db:
+    image: postgres:13.2-alpine
+    restart: unless-stopped
+    container_name: db_postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DATABASE=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database:/var/lib/postgresql/data

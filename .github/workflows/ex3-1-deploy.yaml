@@ -25,11 +25,3 @@ jobs:
           push: true
           tags: maxmynter/devopsdocker-3.1:latest
 
-  services:
-    watchtower:
-      image: containerrr/watchtower
-      environment:
-        - WATCHTOWER_POLL_INTERVALL=60
-      container_name: watchtower
-      volumes:
-        - ../../part3/ex3.1/docker.sock:/var/run/docker.sock

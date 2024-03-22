@@ -4,3 +4,6 @@
 [submodule "material-applications"]
 	path = material-applications
 	url = https://github.com/docker-hy/material-applications.git
+[submodule "part3/ex3.2/part3/ex3.2/hello"]
+	path = part3/ex3.2/part3/ex3.2/hello
+	url = https://github.com/maxmynter/svelte-playground.git

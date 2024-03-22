@@ -7,3 +7,6 @@
 [submodule "part3/ex3.2/part3/ex3.2/hello"]
 	path = part3/ex3.2/part3/ex3.2/hello
 	url = https://github.com/maxmynter/svelte-playground.git
+[submodule "part3/ex3.2/app"]
+	path = part3/ex3.2/app
+	url = https://github.com/maxmynter/svelte-playground

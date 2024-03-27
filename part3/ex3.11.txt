@@ -1,0 +1,9 @@
+I am doing the MOOC.FI devops with kubernetes mooc as well. So i am familiar with the basics of kubernetes.
+Some are
+- Cluster: Collection of nodes that run containerized applications
+- Node: A worker machine (virtual or physical) that is equipped to run pods
+- Pod: smallest deployable unit (one or more container:s in a secluded network)
+- Service: Abstraction to expose a set of pods as a network service 
+- Deployment: Manager of a replica of your application. Replaces crashed pods
+- ReplicaSet: Defined number of duplicates of Pods simultaneously running
+- Ingress: API object managing/routing external access to the network.

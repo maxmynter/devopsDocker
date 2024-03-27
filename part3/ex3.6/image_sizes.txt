@@ -1,0 +1,70 @@
+-- Frontend Before Optimization
+IMAGE          CREATED          CREATED BY                                      SIZE      COMMENT
+c277b9cdc4fa   51 minutes ago   CMD ["/bin/sh" "-c" "serve -s -l 5000 build"]   0B        buildkit.dockerfile.v0
+<missing>      51 minutes ago   USER frontendExecutor                           0B        buildkit.dockerfile.v0
+<missing>      51 minutes ago   RUN /bin/sh -c useradd frontendExecutor # bu…   334kB     buildkit.dockerfile.v0
+<missing>      51 minutes ago   EXPOSE map[5000/tcp:{}]                         0B        buildkit.dockerfile.v0
+<missing>      51 minutes ago   RUN /bin/sh -c npm install -g serve # buildk…   6.39MB    buildkit.dockerfile.v0
+<missing>      51 minutes ago   RUN /bin/sh -c npm run build # buildkit         8.68MB    buildkit.dockerfile.v0
+<missing>      51 minutes ago   RUN /bin/sh -c npm install # buildkit           347MB     buildkit.dockerfile.v0
+<missing>      52 minutes ago   COPY example-frontend/ . # buildkit             708kB     buildkit.dockerfile.v0
+<missing>      52 minutes ago   WORKDIR /usr/src/app                            0B        buildkit.dockerfile.v0
+<missing>      6 months ago     /bin/sh -c #(nop)  CMD ["node"]                 0B        
+<missing>      6 months ago     /bin/sh -c #(nop)  ENTRYPOINT ["docker-entry…   0B        
+<missing>      6 months ago     /bin/sh -c #(nop) COPY file:4d192565a7220e13…   388B      
+<missing>      6 months ago     /bin/sh -c set -ex   && savedAptMark="$(apt-…   9.4MB     
+<missing>      6 months ago     /bin/sh -c #(nop)  ENV YARN_VERSION=1.22.19     0B        
+<missing>      6 months ago     /bin/sh -c ARCH= && dpkgArch="$(dpkg --print…   100MB     
+<missing>      6 months ago     /bin/sh -c #(nop)  ENV NODE_VERSION=16.20.2     0B        
+<missing>      6 months ago     /bin/sh -c groupadd --gid 1000 node   && use…   337kB     
+<missing>      6 months ago     /bin/sh -c #(nop)  CMD ["bash"]                 0B        
+<missing>      6 months ago     /bin/sh -c #(nop) ADD file:3521159cdea23e107…   63.5MB    
+-- Backend before optimization
+IMAGE          CREATED          CREATED BY                                      SIZE      COMMENT
+6df3817431b1   51 minutes ago   CMD ["/bin/sh" "-c" "./server"]                 0B        buildkit.dockerfile.v0
+<missing>      51 minutes ago   USER backend_user                               0B        buildkit.dockerfile.v0
+<missing>      51 minutes ago   RUN /bin/sh -c adduser backend_user # buildk…   9.12kB    buildkit.dockerfile.v0
+<missing>      51 minutes ago   EXPOSE map[8080/tcp:{}]                         0B        buildkit.dockerfile.v0
+<missing>      51 minutes ago   RUN /bin/sh -c go build # buildkit              240MB     buildkit.dockerfile.v0
+<missing>      51 minutes ago   COPY example-backend/ . # buildkit              29.9kB    buildkit.dockerfile.v0
+<missing>      51 minutes ago   WORKDIR /usr/src/app                            0B        buildkit.dockerfile.v0
+<missing>      3 weeks ago      WORKDIR /go                                     0B        buildkit.dockerfile.v0
+<missing>      3 weeks ago      RUN /bin/sh -c mkdir -p "$GOPATH/src" "$GOPA…   0B        buildkit.dockerfile.v0
+<missing>      3 weeks ago      COPY /usr/local/go/ /usr/local/go/ # buildkit   220MB     buildkit.dockerfile.v0
+<missing>      3 weeks ago      ENV PATH=/go/bin:/usr/local/go/bin:/usr/loca…   0B        buildkit.dockerfile.v0
+<missing>      3 weeks ago      ENV GOPATH=/go                                  0B        buildkit.dockerfile.v0
+<missing>      3 weeks ago      ENV GOTOOLCHAIN=local                           0B        buildkit.dockerfile.v0
+<missing>      3 weeks ago      ENV GOLANG_VERSION=1.22.1                       0B        buildkit.dockerfile.v0
+<missing>      3 weeks ago      RUN /bin/sh -c set -eux;  apt-get update;  a…   240MB     buildkit.dockerfile.v0
+<missing>      2 weeks ago      /bin/sh -c set -eux;  apt-get update;  apt-g…   183MB     
+<missing>      2 weeks ago      /bin/sh -c set -eux;  apt-get update;  apt-g…   48.5MB    
+<missing>      2 weeks ago      /bin/sh -c #(nop)  CMD ["bash"]                 0B        
+<missing>      2 weeks ago      /bin/sh -c #(nop) ADD file:9b51ed214f9332acf…   139MB     
+-- Frontend after optimization
+IMAGE          CREATED             CREATED BY                                      SIZE      COMMENT
+c27e1b7e3e5b   13 seconds ago      CMD ["/bin/sh" "-c" "serve -s -l 5000 build"]   0B        buildkit.dockerfile.v0
+<missing>      13 seconds ago      USER frontendExecutor                           0B        buildkit.dockerfile.v0
+<missing>      13 seconds ago      EXPOSE map[5000/tcp:{}]                         0B        buildkit.dockerfile.v0
+<missing>      13 seconds ago      COPY /usr/src/app/build ./build # buildkit      1.19MB    buildkit.dockerfile.v0
+<missing>      53 seconds ago      RUN /bin/sh -c npm install -g serve &&  user…   11MB      buildkit.dockerfile.v0
+<missing>      About an hour ago   WORKDIR /usr/src/app                            0B        buildkit.dockerfile.v0
+<missing>      6 months ago        /bin/sh -c #(nop)  CMD ["node"]                 0B        
+<missing>      6 months ago        /bin/sh -c #(nop)  ENTRYPOINT ["docker-entry…   0B        
+<missing>      6 months ago        /bin/sh -c #(nop) COPY file:4d192565a7220e13…   388B      
+<missing>      6 months ago        /bin/sh -c set -ex   && savedAptMark="$(apt-…   9.4MB     
+<missing>      6 months ago        /bin/sh -c #(nop)  ENV YARN_VERSION=1.22.19     0B        
+<missing>      6 months ago        /bin/sh -c ARCH= && dpkgArch="$(dpkg --print…   100MB     
+<missing>      6 months ago        /bin/sh -c #(nop)  ENV NODE_VERSION=16.20.2     0B        
+<missing>      6 months ago        /bin/sh -c groupadd --gid 1000 node   && use…   337kB     
+<missing>      6 months ago        /bin/sh -c #(nop)  CMD ["bash"]                 0B        
+<missing>      6 months ago        /bin/sh -c #(nop) ADD file:3521159cdea23e107…   63.5MB    
+-- Backend after optimization
+IMAGE          CREATED          CREATED BY                                      SIZE      COMMENT
+1dc990f5808b   12 minutes ago   CMD ["/bin/sh" "-c" "./server"]                 0B        buildkit.dockerfile.v0
+<missing>      12 minutes ago   USER backend_user                               0B        buildkit.dockerfile.v0
+<missing>      12 minutes ago   EXPOSE map[8080/tcp:{}]                         0B        buildkit.dockerfile.v0
+<missing>      12 minutes ago   RUN /bin/sh -c adduser -D backend_user # bui…   4.7kB     buildkit.dockerfile.v0
+<missing>      12 minutes ago   COPY /usr/src/app/server /app/server # build…   18.5MB    buildkit.dockerfile.v0
+<missing>      12 minutes ago   WORKDIR /app                                    0B        buildkit.dockerfile.v0
+<missing>      2 months ago     /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B        
+<missing>      2 months ago     /bin/sh -c #(nop) ADD file:d0764a717d1e9d0af…   7.73MB    

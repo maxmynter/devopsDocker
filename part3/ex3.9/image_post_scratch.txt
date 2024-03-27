@@ -1,0 +1,8 @@
+IMAGE          CREATED         CREATED BY                                      SIZE      COMMENT
+1997c921df7f   6 minutes ago   CMD ["/bin/sh" "-c" "./server"]                 0B        buildkit.dockerfile.v0
+<missing>      6 minutes ago   USER backend_user                               0B        buildkit.dockerfile.v0
+<missing>      6 minutes ago   EXPOSE map[8080/tcp:{}]                         0B        buildkit.dockerfile.v0
+<missing>      6 minutes ago   USER 10001                                      0B        buildkit.dockerfile.v0
+<missing>      6 minutes ago   COPY /etc/passwd.min /etc/passwd # buildkit     31B       buildkit.dockerfile.v0
+<missing>      6 minutes ago   COPY /usr/src/app/server /app/server # build…   18.7MB    buildkit.dockerfile.v0
+<missing>      6 minutes ago   WORKDIR /app                                    0B        buildkit.dockerfile.v0

@@ -1,0 +1,17 @@
+IMAGE          CREATED          CREATED BY                                      SIZE      COMMENT
+de3da54954b4   37 seconds ago   ENTRYPOINT ["node" "build"]                     0B        buildkit.dockerfile.v0
+<missing>      37 seconds ago   USER prod                                       0B        buildkit.dockerfile.v0
+<missing>      37 seconds ago   RUN /bin/sh -c adduser -D -h /home/prod prod…   4.86kB    buildkit.dockerfile.v0
+<missing>      37 seconds ago   COPY /app/node_modules ./node_modules # buil…   68.2MB    buildkit.dockerfile.v0
+<missing>      38 seconds ago   COPY /app/build ./build # buildkit              1.9MB     buildkit.dockerfile.v0
+<missing>      8 minutes ago    COPY /app/package*.json ./ # buildkit           69.6kB    buildkit.dockerfile.v0
+<missing>      8 minutes ago    WORKDIR /app                                    0B        buildkit.dockerfile.v0
+<missing>      2 hours ago      /bin/sh -c #(nop)  CMD ["node"]                 0B        
+<missing>      2 hours ago      /bin/sh -c #(nop)  ENTRYPOINT ["docker-entry…   0B        
+<missing>      2 hours ago      /bin/sh -c #(nop) COPY file:4d192565a7220e13…   388B      
+<missing>      2 hours ago      /bin/sh -c apk add --no-cache --virtual .bui…   7.78MB    
+<missing>      2 hours ago      /bin/sh -c #(nop)  ENV YARN_VERSION=1.22.19     0B        
+<missing>      2 hours ago      /bin/sh -c addgroup -g 1000 node     && addu…   111MB     
+<missing>      2 hours ago      /bin/sh -c #(nop)  ENV NODE_VERSION=18.20.0     0B        
+<missing>      2 months ago     /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B        
+<missing>      2 months ago     /bin/sh -c #(nop) ADD file:d0764a717d1e9d0af…   7.73MB    
